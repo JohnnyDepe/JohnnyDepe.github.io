@@ -13,17 +13,139 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/09/03/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <title><![CDATA[浅谈递归]]></title>
+      <url>http://yoursite.com/2015/05/25/git%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<h1 id="shell-简介"><a href="#shell-简介" class="headerlink" title="shell 简介"></a>shell 简介</h1><p>说明：shell 是一个命令解析器,也是一种编程语言<br>作用：用于接收用户命令，在调用相应的应用程序<br>分类：图形界面shell 和 命令行shell</p>
+<h1 id="bash-的学习"><a href="#bash-的学习" class="headerlink" title="bash 的学习"></a>bash 的学习</h1><h3 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h3><a id="more"></a>
+<ul>
+<li>pwd 查看当前目录</li>
+<li>cd 切换目录</li>
+<li>ls 查看当前目录下的所有文件</li>
+<li>mkdir 创建目录</li>
+<li>touch 创建文件</li>
+<li>cat 查看文件的全部内容</li>
+<li>rm 删除文件</li>
+<li>rmdir 删除文件夹,只能删除空文件夹</li>
+<li>rm -rf 可以删除带有文件的文件夹</li>
+<li>mv 可以移动或者重命名   [ mv b.js c.js ] (重命名) [ mv b.js ./index/ ] (移动相当于剪切)</li>
+<li>cp 复制文件 </li>
+<li>head 查看文件前几行  $ head -5 index.html 查看文件前5行</li>
+<li>tab 自动补全,连按两次会将所有匹配的内容显示出来</li>
+<li>history 查看操作历史</li>
+<li>ssh 远程登录</li>
+<li><code>&gt;</code> 和 <code>&gt;&gt;</code> 重定向<br><code>&gt;</code> 覆盖 echo hello world &gt; readme.md<br><code>&gt;&gt;</code> 追加 echo hello world &gt;&gt; readme.md</li>
+<li>| 管道符</li>
+<li>grep 匹配内容,一般结合管道符 ls | grep</li>
+</ul>
+<h1 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h1><p>vi编辑器是一种随系统安装的图片编辑软件</p>
+<p>vi编辑器提供了三种模式：命令行模式 / 输入模式 / 末行模式</p>
+<ul>
+<li>打开/创建文件， vi 文件路径</li>
+<li>底行模式 :w保存，:w filenme另存为</li>
+<li>底行模式 :q退出</li>
+<li>底行模式 :wq保存并退出</li>
+<li>底行模式 :e! 撤销更改，返回到上一次保存的状态</li>
+<li>底行模式 :q! 不保存强制退出</li>
+<li>底行模式 :set nu 设置行号</li>
+<li>命令模式 ZZ（大写）保存并退出</li>
+<li>命令模式 u辙销操作，可多次使用</li>
+<li>命令模式 dd删除当前行</li>
+<li>命令模式 yy复制当前行</li>
+<li>命令模式 p 粘贴内容</li>
+<li>命令模式 ctrl+f向前翻页</li>
+<li>命令模式 ctrl+b向后翻页</li>
+<li>命令模式 i进入编辑模式，当前光标处插入</li>
+<li>命令模式 a进入编辑模式，当前光标后插入</li>
+<li>命令模式 A进入编辑模式，光标移动到行尾</li>
+<li>命令模式 o进入编辑模式，当前行下面插入新行</li>
+<li>命令模式 O进入编辑模式，当前行上面插入新行</li>
+</ul>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><p>说明：SSH 是一种网络协议，用于计算机之间的加密登录</p>
+<h1 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h1><p>作用：可以帮我们备份文件的每一次修改,并且我们可以非常方便的恢复到任意备份状态<br>分类： 本地版本控制、集中式版本控制和分布式版本控制</p>
+<ul>
+<li>本地版本控制： 不能实现多人协同开发</li>
+<li>集中式版本控制：如果集中管理的服务器坏了，将会导致版本丢失的风险。并且协同开发者必须通过网络获取代码，如果网络不佳，就可能拿不到代码，不利于开发</li>
+<li>分布式版本控制：版本库在本地的计算机，因此不会受网络的影响。如果开发者修改了本地文件，需要推送给启发开发者，这时需要一台共享服务器，所有开发者通过这台共享服务器提交和更新数据;</li>
+</ul>
+<h1 id="Git学习"><a href="#Git学习" class="headerlink" title="Git学习"></a>Git学习</h1><h3 id="Git本地仓库"><a href="#Git本地仓库" class="headerlink" title="Git本地仓库"></a>Git本地仓库</h3><ul>
+<li>命令行打开方式 ： 任意目录右击 选中 Git Bash Here</li>
+<li><p>配置用户<br>  git config –global user.name “名字”<br>  git config –global user.email “邮箱”</p>
+<ul>
+<li>–global 配置当前用户所有仓库</li>
+<li>–list 查看配置信息</li>
+<li>–system 配置当前计算机上所有用户的所有仓库</li>
+</ul>
+</li>
+<li><p>初始化仓库<br>我们要想使用git进行版本控制操作，需要将现有的项目初始化为一个仓库，或者将一个已有的使用git做版本控制工具的项目克隆到本地。</p>
+</li>
+</ul>
+<ul>
+<li><code>git init</code><br>此操作会在当前项目目录下创建一个.git的隐藏文件夹</li>
+<li>若公司已有git项目，那么就利用克隆<br>语法： <code>git clone 项目地址</code><br>此操作会在当前目录下生成一个copy目录，</li>
+</ul>
+<ul>
+<li><p>查看文件状态<br><code>git status</code> 检测当前仓库文件的状态</p>
+</li>
+<li><p>添加文件到暂存区<br><code>git add 文件</code> ,<code>*</code> 或者 <code>-A</code>代表所有<br>此操作会将文件放到暂存区，变为绿色，等待被提交</p>
+</li>
+<li><p>提交文件<br><code>git commit -m &quot;说明信息&quot;</code><br>此操作会将暂存区所有标记为绿色的文件，全部提交给本地仓库存储</p>
+</li>
+<li><p>查看提交历史<br><code>git log</code> 这里可以查看SHA值</p>
+</li>
+<li><p>回滚到以前的版本<br><code>git reset hard SHA值</code></p>
+</li>
+<li><p>查看所有提交历史<br><code>git reflog</code></p>
+</li>
+</ul>
+<h3 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h3><p>在开发过程中如果项目中出现bug，这时我们创建一个新的分支来处理我们的bug,这样可以确保我们master上的代码不会改变</p>
+<ul>
+<li>创建分支<br><code>git branch 分支名</code></li>
+<li>查看分支<br><code>git branch</code></li>
+<li>切换分支<br><code>git checkout 分支名</code></li>
+<li>合并分支<br>需要在主分支下<br><code>git merge 分支名</code></li>
+<li>删除分支<br><code>git branch -d 分支名</code></li>
+</ul>
+<h3 id="Git远程仓库"><a href="#Git远程仓库" class="headerlink" title="Git远程仓库"></a>Git远程仓库</h3><ul>
+<li><p>创建共享仓库<br>git要求共享仓库必须是以.git结尾的目录</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir repository.git 创建仓库</div><div class="line">cd repository.git 进入仓库</div><div class="line">git init --bare 创建一个共享仓库</div></pre></td></tr></table></figure>
+</li>
+<li><p>向共享仓库中共享内容</p>
+<ul>
+<li>在自己的目录中运行git bash  <code>git push ../repository.git master</code></li>
+</ul>
+</li>
+<li><p>从共享仓库中取出内容</p>
+<ul>
+<li><code>git pull ../repository.git master</code></li>
+</ul>
+</li>
+<li><p>如果想从第三方的服务器上取回内容，如github，需要先pull在push</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[浅谈递归]]></title>
+      <url>http://yoursite.com/2015/05/25/%E9%80%92%E5%BD%92/</url>
+      <content type="html"><![CDATA[<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h3 id="什么是递归？"><a href="#什么是递归？" class="headerlink" title="什么是递归？"></a>什么是递归？</h3><p>在程序中，所谓的递归就是函数直接调用自己或者间接调用自己</p>
+<p><strong>递归思想就是将一个问题转换为一个已解决的问题</strong></p>
+<p>理论就不多说了，这些理论我也看得不是太懂，直接上例子：<br><a id="more"></a></p>
+<p>1.求 1+2+3+…+100的和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">分析：</div><div class="line">1. 首先假设递归函数已经写好了，假设为 sum，那么sum(100)就是求从1加到100的和</div><div class="line">2. 找出递归关系  sum(100) == sum(99) + 100;</div><div class="line">3. 写出递归体 function sum(n)&#123;</div><div class="line">                return sum(n-1) + n</div><div class="line">             &#125;</div><div class="line">4. 将临界条件加到递归体中</div><div class="line">    * 将 求 100 转换为 求 99</div><div class="line">    * 将 求 99 转换为 求 98</div><div class="line">    * ...</div><div class="line">    * 将求 2 转换为 求 1</div><div class="line">    * 求 1 结果就是 1</div><div class="line">    * 即: sum( 1 ) 是 1</div><div class="line">    function sum(n)&#123;</div><div class="line">        if ( n==1 ) return 1; </div><div class="line">        return sum(n-1) + n</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function sum(n)&#123;</div><div class="line">    if ( n==1 ) return 1; </div><div class="line">    return sum(n-1) + n</div><div class="line">&#125; </div><div class="line">sum(100)</div></pre></td></tr></table></figure>
+<p>提升一下难度<br>2.求数列: 1, 1, 2, 4, 7, 11, 16, … 求 第 n 项, 求前 n 项和.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">分析：</div><div class="line">其实分析的方法都是一样的，只不过这一题找递归关系可能难一点，我们可以列出几项找出关系</div><div class="line">1. 假设这个函数已经存在为fn</div><div class="line">2. 找出递推关系 f(2) = f(1) + 0;</div><div class="line">               f(3) = f(2) + 1;</div><div class="line">               f(4) = f(3) + 2;</div><div class="line">               ... </div><div class="line">               f(n) = f(n-1) + n - 2;</div><div class="line">接下来的步骤都是一样的了,我就不再叙述</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fn(n)&#123;</div><div class="line">    if ( n==1 ) return 1;</div><div class="line">    return fn(n-1) + n-2;</div><div class="line">&#125;</div><div class="line">function sum(n)&#123;</div><div class="line">    if ( n == 1 ) return 1;</div><div class="line">    return sum(n-1) + fn(n)</div><div class="line">&#125;</div><div class="line">console.log(fn(5)+&quot;,&quot;+sum(5));</div></pre></td></tr></table></figure>
+<h3 id="递归高级"><a href="#递归高级" class="headerlink" title="递归高级"></a>递归高级</h3><p><strong>用递归实现深拷贝 </strong><br>什么是深拷贝？<br>就是在拷贝数据的时候，将数据的所有引用结构都拷贝一份。简单的说就是在内存中存在两个数据结构完全相同的有相互独立的数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">分析：</div><div class="line">1.首先假设深拷贝这个方法已经完成，为deepClone</div><div class="line">2.要拷贝一个数据，我们肯定要去遍历它的属性，如果这个对象的属性仍是对象，继续使用这个方法，如此往复</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">**方法一**</div><div class="line">function deepClone1(o1,o2)&#123;</div><div class="line">    for (var k in o2)&#123;</div><div class="line">        if (typeof o2[k] === &quot;object&quot;)&#123;</div><div class="line">            o1[k] = &#123;&#125;;</div><div class="line">            deepClone1(o1[k],o2[k]);</div><div class="line">        &#125;  else&#123;</div><div class="line">            o1[k] = o2[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">**方法二**</div><div class="line">function deepClone2(obj)&#123;</div><div class="line">    var temp = &#123;&#125;;</div><div class="line">    for( var k in obj )&#123;</div><div class="line">        if ( typeof obj[k] === &quot;object&quot; )&#123;</div><div class="line">            temp[k] = deepClone2(obj[k]);</div><div class="line">        &#125; else &#123;</div><div class="line">            temp[k] = obj[k];</div><div class="line">        &#125;</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="递归的性能问题"><a href="#递归的性能问题" class="headerlink" title="递归的性能问题"></a>递归的性能问题</h3><p>什么也不多说，直接上代码，以一个例子为例</p>
+<p>求兔子数列 1,1,2,3,5,8,13,21,34,55,89…中的第n项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">不难看出这个例子中的递推关系是后一项等于前两项的和</div><div class="line">fn(n) = fn( n-1 ) + fn( n-2 );</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    定义一个计数变量count,看再求出第n项，这个函数被调用了多少次</div><div class="line">    var count = 0;</div><div class="line">    function fn(n)&#123;</div><div class="line">        count++;</div><div class="line">        if( n==1 || n==2)&#123; return 1; &#125;</div><div class="line">        return fn(n-1) + fn(n-2);</div><div class="line">    &#125;</div><div class="line">    // n = 5 =&gt; count = 9</div><div class="line">    // n = 6 =&gt; count = 15</div><div class="line">    // n = 7 =&gt; count = 25</div><div class="line">    // n = 8 =&gt; count = 41</div><div class="line">    ...</div><div class="line">    // n = 20 =&gt; count = 13529</div><div class="line">    // n = 21 =&gt; count = 21891</div><div class="line">由此可看出当你计算越大的值时，函数被调用的次数也就越多</div></pre></td></tr></table></figure>
+<p>画张图看下</p>
+<p><img src="01-递归.png" alt="递归"></p>
+<p>由此可看出，性能低的原因是重复计算。因此我们可以将每次的计算结果记录下来。<br>每次计算的时候我们可以先看看数据是否存储起来，如果有直接拿来用，如果没有在进行递归，但递归后需要将计算结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var data = [1,1];</div><div class="line">function feb(n)&#123;</div><div class="line">    var v = data[n];</div><div class="line">    if ( data[n] === undefined )&#123;</div><div class="line">        v = feb(n-1) + feb(n-2);</div><div class="line">        // 将计算出的结果存储到数组中</div><div class="line">        data[n] = v;</div><div class="line">    &#125;</div><div class="line">    return v;</div><div class="line">&#125;</div><div class="line">// n = 10 =&gt; count = 19</div><div class="line">// n = 30 =&gt; count = 15</div><div class="line">// n = 21 =&gt; count = 43</div></pre></td></tr></table></figure>
+<p>由此可看出如果将重复计算的值记录下来，性能会得到大大的优化</p>
 ]]></content>
     </entry>
     
