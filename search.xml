@@ -13,8 +13,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[浅谈递归]]></title>
-      <url>http://yoursite.com/2015/05/25/git%E5%AD%A6%E4%B9%A0/</url>
+      <title><![CDATA[git 入门学习]]></title>
+      <url>http://yoursite.com/2015/06/25/git%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<h1 id="shell-简介"><a href="#shell-简介" class="headerlink" title="shell 简介"></a>shell 简介</h1><p>说明：shell 是一个命令解析器,也是一种编程语言<br>作用：用于接收用户命令，在调用相应的应用程序<br>分类：图形界面shell 和 命令行shell</p>
 <h1 id="bash-的学习"><a href="#bash-的学习" class="headerlink" title="bash 的学习"></a>bash 的学习</h1><h3 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h3><a id="more"></a>
 <ul>
